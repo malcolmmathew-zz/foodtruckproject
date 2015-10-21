@@ -1,0 +1,23 @@
+Ginger.io likes food. 
+
+Wednesday & Fridays are days to eat at food trucks. 
+
+APP 1:
+Display a list of upcoming events. When you click the event it opens up a page that displays the vendors that will come to the event. When you click on the vendor it should open a page that gives the vendor name and # of occurences over the past 30 days.
+
+
+models:
+
+Event object:
+-date of event
+-list of vendor objects associated
+-name?
+-location
+
+Vendor object:
+-vendor name
+-number of occurences over the past 30 days
+
+
+
+https://www.facebook.com/OffTheGridSF/events
