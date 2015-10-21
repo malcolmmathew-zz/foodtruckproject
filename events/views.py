@@ -34,10 +34,10 @@ event_list = [event for event in events['data'] \
 				if parser.parse(event['start_time'].encode('ascii','ignore')) > timezone.now() ]
 
 for event in events['data']:
-	if not Event.objects.filter(event_id=int(event['id'])):
+	if not Event.objects.filter(event_id=event['id'].encode('ascii','ignore')):
 		event_obj = Event()
 		event_obj.name = event['name'].encode('ascii','ignore')
-		event_obj.event_id = int(event['id'])
+		event_obj.event_id = event['id'].encode('ascii','ignore')
 		event_obj.date = parser.parse(event['start_time'].encode('ascii','ignore'))
 		event_obj.description = event['description'].encode('ascii','ignore')
 		#print event_obj.description
@@ -74,10 +74,7 @@ for event in Event.objects.filter(date__gte=timezone.now() - timedelta(days=30))
 
 for vendor in Vendor.objects.all():
 	vendor.number_of_occurences = vendor.events.filter(date__gte=timezone.now() - timedelta(days=30)).count()
-	if vendor.number_of_occurences > 0:
-		print vendor.name
 	vendor.save()
-
 
 
 #if datetime.datetime.strptime(str(event['start_time']),'%Y-%m-%dT%H:%M:%S-0000') > datetime.datetime.now()]

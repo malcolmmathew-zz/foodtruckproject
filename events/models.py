@@ -6,7 +6,7 @@ class Event(models.Model):
 	date = models.DateTimeField()
 	name = models.CharField(max_length=200)
 	#location = models.CharField(max_length=350)
-	event_id = models.IntegerField(default=0)
+	event_id = models.CharField(max_length=200)
 	description = models.TextField(max_length=1500, default="")
 
 	def __str__(self):
