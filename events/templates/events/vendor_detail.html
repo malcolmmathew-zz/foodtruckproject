@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>{{ vendor.name }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="page-header">
+  <h1>{{ vendor.name }} <small> appeared at {{vendor.number_of_occurences}} 
+{% if vendor.number_of_occurences != 1 %}
+	events
+{% else %}
+	event
+{% endif %}
+ over the past month</small></h1>
+</div>
+
+</body>
+</html>
