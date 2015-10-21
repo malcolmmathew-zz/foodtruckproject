@@ -87,12 +87,10 @@ WSGI_APPLICATION = 'ginger.wsgi.application'
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}"""
-
-import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config()
 }
+"""
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -134,3 +132,14 @@ STATICFILES_DIRS = (
 )"""
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'daffnkkbg57onb',
+        'HOST': 'ec2-107-21-219-109.compute-1.amazonaws.com',
+        'PORT': '5432',                    
+        'USER': 'yefzibnjisoqfo',
+        'PASSWORD': '7ogUXYlouNHrtuWak9teE2a0wq',                             
+    }
+}
